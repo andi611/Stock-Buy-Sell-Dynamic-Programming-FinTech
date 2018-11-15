@@ -12,11 +12,11 @@
 	- stock = buy stock with original capital
 - **DP recursion:**
 	- calculate optimal money:
-		money = hold yesterday's money, or
-		money = sell all your stocks today
+		* money = hold yesterday's money, or
+		* money = sell all your stocks today
 	- calculate optimal stock:
-		stock = hold yesterday's stock, or
-		stock = buy stock today with all your money
+		* stock = hold yesterday's stock, or
+		* stock = buy stock today with all your money
 - **DP trace back:**
 	- You must sell on the last day to maximize profit
 	- trace the previous action that lead to this optimal value
