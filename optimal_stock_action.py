@@ -16,7 +16,7 @@ import numpy as np
 import pandas as pd
 
 
-def myOptimAction(priceVec, transFeeRate, use_DP=True):
+def find_optim_action(priceVec, transFeeRate, use_DP=True):
 	
 	_BUY = 1
 	_HOLD = 0
@@ -100,7 +100,7 @@ def myOptimAction(priceVec, transFeeRate, use_DP=True):
 		return actionVec
 
 
-def profitEstimateOpen(priceVec, transFeeRate, actionVec):
+def profit_estimate(priceVec, transFeeRate, actionVec):
 
 	capital = 1
 	capitalOrig = capital
@@ -143,13 +143,13 @@ if __name__ == '__main__':
 		df = pd.read_csv(sys.argv[1])
 		transFeeRate = float(sys.argv[2])
 	except: 
-		df = pd.read_csv('./SPY.csv')
+		df = pd.read_csv('./data.csv')
 		transFeeRate = float(0.01)
 
 	priceVec = df["Adj Close"].values
 	print('Optimizing over %i numbers of transactions.' % (len(priceVec)))
 
-	actionVec = myOptimAction(priceVec, transFeeRate)
-	returnRate = profitEstimateOpen(priceVec, transFeeRate, actionVec)
+	actionVec = find_optim_action(priceVec, transFeeRate)
+	returnRate = profit_estimate(priceVec, transFeeRate, actionVec)
 	print('Return rate: ', returnRate)
 
