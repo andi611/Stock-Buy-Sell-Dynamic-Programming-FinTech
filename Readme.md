@@ -1,5 +1,5 @@
 # Fintech: Best Time to Buy and Sell Stock with Transaction Fee
-### Find the best time to buy and sell stock with transaction fe using Dynamic Programming, implementation in Python.
+* Find the best time to buy and sell stock with transaction fee using Dynamic Programming, implementation in Python.
 
 ## Algorithm
 - Use **Dynamic Programming** to compute to optimal action sequence along a give price vector.
