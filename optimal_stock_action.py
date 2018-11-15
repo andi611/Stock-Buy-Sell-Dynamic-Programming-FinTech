@@ -16,7 +16,7 @@ import numpy as np
 import pandas as pd
 
 
-def find_optim_action(priceVec, transFeeRate, use_DP=True):
+def find_optimal_action(priceVec, transFeeRate, use_DP=True):
 	
 	_BUY = 1
 	_HOLD = 0
@@ -149,7 +149,7 @@ if __name__ == '__main__':
 	priceVec = df["Adj Close"].values
 	print('Optimizing over %i numbers of transactions.' % (len(priceVec)))
 
-	actionVec = find_optim_action(priceVec, transFeeRate)
+	actionVec = find_optimal_action(priceVec, transFeeRate)
 	returnRate = profit_estimate(priceVec, transFeeRate, actionVec)
 	print('Return rate: ', returnRate)
 
